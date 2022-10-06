@@ -257,3 +257,49 @@ def gayme():
     dealer_score.append(ct[card3]["value"])
     dealer_score.append(ct[card4]["value"])
     # Game init (the while loop is broken idk why hence the if statement)
+    while player_total < 21 or dealer_total < 21:
+        player_total = sum(player_score)
+        dealer_total = sum(dealer_score)
+        print(
+            f"Your hand {player_hand}\nDealers hand ['{dealer_hand[1]}, '?'..]\nYour score {player_total}\n"
+        )
+        choice = input("Input \"h\" or \"s\" to hit or stand.\n-> ")
+        if choice.lower() == "h":
+            player_hand.append(ct[randomNoRep(cardnocopy)]["fancy"])
+            player_score.append(ct[randomNoRep(cardnocopy)]["value"])
+        elif choice.lower() == "s":
+            dealer_hand.append(ct[randomNoRep(cardnocopy)]["fancy"])
+            dealer_score.append(ct[randomNoRep(cardnocopy)]["value"])
+            print('Ended')
+            print(
+                f"Your Hand: {player_hand}\nYour Score: {player_total}\nDealers Hand {dealer_hand}\n Dealers Score {dealer_total}")
+
+            if min(dealer_total, player_total) == player_total:
+                print("You Lose...")
+                exit()
+            elif min(dealer_total, player_total) == dealer_total:
+                print("You Win!\n")
+                exit()
+            else:
+                print("Draw!\n")
+                exit()
+        else:
+            print("Im sorry I do not understand try again")
+        player_total = sum(player_score)
+        dealer_total = sum(dealer_score)
+        if player_total == 21:
+            print(
+                f"Your Hand: {player_hand}\nYour Score: {player_total}\nDealers Hand: {dealer_hand}\nDealers Score: {dealer_total}\nYou Win!")
+            exit()
+        elif player_total > 21:
+            print(
+                f"Your Hand: {player_hand}\nYour Score: {player_total}\nDealers Hand: {dealer_hand}\nDealers Score:  {dealer_total}\nYou Lose...")
+            exit()
+        elif dealer_total == 21:
+            print(
+                f"Your Hand: {player_hand}\nYour Score: {player_total}\nDealers Hand: {dealer_hand}\nDealers Score: {dealer_total}\nYou Lose...")
+            exit()
+        elif dealer_total > 21:
+            print(
+                f"Your Hand: {player_hand}\nYour Score: {player_total}\nDealers Hand: {dealer_hand}\nDealers Score: {dealer_total}\nYou Win!")
+            exit()
