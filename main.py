@@ -226,3 +226,34 @@ ct = {
         "fancy": "♦4"
     },
 }
+
+
+def gayme():
+    # Bunch of variables
+    cardnos = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+        22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+        40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51
+    ]
+    cardnocopy = cardnos.copy()
+    # initalize player and dealer hands/scores variables
+    dealer_hand = []
+    player_hand = []
+    player_score = []
+    dealer_score = []
+    player_total = 0
+    dealer_total = 0
+    # Deal 2 cards to both!
+    card1 = randomNoRep(cardnocopy)
+    card2 = randomNoRep(cardnocopy)
+    card3 = randomNoRep(cardnocopy)
+    card4 = randomNoRep(cardnocopy)
+    player_hand.append(ct[card1]["fancy"])
+    player_hand.append(ct[card2]["fancy"])
+    player_score.append(ct[card1]["value"])
+    player_score.append(ct[card2]["value"])
+    dealer_hand.append(ct[card3]["fancy"])
+    dealer_hand.append(ct[card4]["fancy"])
+    dealer_score.append(ct[card3]["value"])
+    dealer_score.append(ct[card4]["value"])
+    # Game init (the while loop is broken idk why hence the if statement)
