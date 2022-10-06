@@ -303,3 +303,10 @@ def gayme():
             print(
                 f"Your Hand: {player_hand}\nYour Score: {player_total}\nDealers Hand: {dealer_hand}\nDealers Score: {dealer_total}\nYou Win!")
             exit()
+
+           
+        
+  def randomNoRep(some: list):
+    number = random.choice(some)
+    some.remove(number)
+    return number
