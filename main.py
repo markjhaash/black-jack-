@@ -321,3 +321,18 @@ def exit():
     else:
         print("I do not undertand")
         return
+
+    
+start = input('Welcome to blackjack!\nType y to play, n to quit.\n-> ')
+if start.lower() == 'y':
+    dealer_hand = []
+    player_hand = []
+    player_score = []
+    dealer_score = []
+    player_total = 0
+    dealer_total = 0
+    gayme()
+elif start.lower() == 'n':
+    print('Have a great day.')
+else:
+    print('Enter a valid character that I understand.')
