@@ -310,3 +310,14 @@ def gayme():
     number = random.choice(some)
     some.remove(number)
     return number
+
+
+def exit():
+    exitchoice = input("Another match or exit? use [a] for another match\n[e] for exit\n-> ")
+    if exitchoice.upper() == 'E':
+        print('Thank you for playing.')
+    elif exitchoice.upper() == 'A':
+        gayme()
+    else:
+        print("I do not undertand")
+        return
